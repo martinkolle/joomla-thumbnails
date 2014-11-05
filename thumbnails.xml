@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5.0">
+	<name>Thumbnails</name>
+	<libraryname>thumbnails</libraryname>
+	<author>Martin Kollerup</author>
+	<creationDate>November 2014</creationDate>
+	<copyright>Copyright (C) 2014</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>martin.kollerup@gmail.com</authorEmail>
+	<authorUrl>www.kmweb.dk</authorUrl>
+	<version>1.0</version>
+	<description>Create thumbnails on the flu</description>
+	<files>
+		<file>thumnail.php</file>
+	</files>
+</extension>
