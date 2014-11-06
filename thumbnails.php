@@ -6,8 +6,9 @@
  * @author  Martin Kollerup <martin.kollerup@gmail.com>
  */
 
+error_reporting(E_ALL);
 
-defined ( '_JEXEC' ) or die ();
+defined ( '_JEXEC' ) or die;
 
 class Thumbnails {
 
@@ -80,7 +81,7 @@ class Thumbnails {
 		if(empty($src) || empty($size) || !is_array($size) || count($size) != 2)
 			return false;
 
-		if (JFolder::exists($thumbPath) || JFolder::create($thumbPath)) {
+		if (JFolder::exists(JPATH_BASE.'/'.$thumbPath) || JFolder::create(JPATH_BASE.'/'.$thumbPath)) {
 			$sourceImage 	= new JImage($src);
 			$imgProperties 	= JImage::getImageFileProperties($src);
 			
