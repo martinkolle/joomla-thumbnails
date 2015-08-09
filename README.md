@@ -6,7 +6,7 @@ Libary for Joomla to create thumbnails
 Usage
 ================
 ```PHP
-jimport('thumbnails.thumbnails');
+jimport('thumbnail.thumbnail');
 $thumb = Thumbnails::instance();
 
 $thumb->get( $image->{'image_intro'}, array(370,240), 'html', array( 'alt'=>$image->{'image_intro_alt'}, '{any-attribute}' => '{any_value}' ) );
