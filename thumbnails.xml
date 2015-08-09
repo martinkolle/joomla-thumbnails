@@ -5,12 +5,12 @@
 	<author>Martin Kollerup</author>
 	<creationDate>November 2014</creationDate>
 	<copyright>Copyright (C) 2014</copyright>
-	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
 	<authorEmail>martin.kollerup@gmail.com</authorEmail>
 	<authorUrl>www.kmweb.dk</authorUrl>
 	<version>1.0</version>
-	<description>Create thumbnails on the flu</description>
+	<description>Create thumbnails on the fly</description>
 	<files>
-		<file>thumnail.php</file>
+		<file>thumbnail.php</file>
 	</files>
 </extension>
