@@ -1,9 +1,11 @@
 <?php
 /**
  * Thumbnails on the fly
- * Create thumbnails based on size
+ * Create thumbnails in Joomla - just like we do in Wordpress
  * 
  * @author  Martin Kollerup <martin.kollerup@gmail.com>
+ * @copyright GNU/GPL v.3.0
+ * @version 1.0
  */
 
 error_reporting(E_ALL);
@@ -17,6 +19,9 @@ class Thumbnails {
 	*/
 	private static $instance = null;
 
+	/**
+	 * Include libaries on load
+	 */
 	public function __construct()
 	{
 		$this->thumbnail_path = 'images/thumbnail/';
@@ -26,6 +31,10 @@ class Thumbnails {
 		jimport('joomla.filesystem.file');
 	}
 
+	/**
+	 * Instance of class
+	 * @return object Return the class
+	 */
 	public static function instance() {
 		if ( ! self::$instance )
 			self::$instance = new self;
@@ -35,12 +44,11 @@ class Thumbnails {
 
 	/**
 	 * [get description]
-	 * @param  [type]  $src            [description]
-	 * @param  [type]  $size           [description]
-	 * @param  string  $type           [description]
-	 * @param  [type]  $tags           [description]
-	 * @param  integer $creationMethod [description]
-	 * @return [type]                  [description]
+	 * @param  string  $src            The path to the image
+	 * @param  array   $size           The image dimension in a array
+	 * @param  string  $type           The return type. Array or img tag.
+	 * @param  [type]  $tags           HTML tags to include in the img tag
+	 * @param  integer $creationMethod Joomla thumbnail creation method
 	 */
 	public function get($src, $size, $type = 'array', $tags = null, $creationMethod = 1){
 		if(empty($src) || empty($size) || !is_array($size) || count($size) != 2)
@@ -57,7 +65,7 @@ class Thumbnails {
 
 		//check if thumbnail folder and thumbnail file exits
 		if(JFile::exists($this->thumbnail_path.$thumbFileName)){
-			return self::comeback($this->thumbnail_path.$thumbFileName, $size, $type, $tags, 0);
+			self::comeback($this->thumbnail_path.$thumbFileName, $size, $type, $tags, 0);
 		} else {
 			if($this->createThumb($src,$size,$thumbFileName,$this->thumbnail_path,(int)$creationMethod)){
 				self::comeback($thumbFileName, $size, $type, $tags, 1);
@@ -76,7 +84,7 @@ class Thumbnails {
 	 * @param  [type] $creationMethod Creation method. 4 will crop. The rest is resizing.
 	 * @return bool                   True on succes else false
 	 */
-	public function createThumb($src,$size,$thumbName,$thumbPath,$creationMethod){
+	public function createThumb($src, $size, $thumbName ,$thumbPath, $creationMethod){
 		
 		if(empty($src) || empty($size) || !is_array($size) || count($size) != 2)
 			return false;
