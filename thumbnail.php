@@ -68,7 +68,7 @@ class Thumbnails {
 			self::comeback($this->thumbnail_path.$thumbFileName, $size, $type, $tags, 0);
 		} else {
 			if($this->createThumb($src,$size,$thumbFileName,$this->thumbnail_path,(int)$creationMethod)){
-				self::comeback($thumbFileName, $size, $type, $tags, 1);
+				self::comeback($this->thumbnail_path.$thumbFileName, $size, $type, $tags, 1);
 			} else {
 				//fallback to src image
 				self::comeback($src,$size,$type,$tags,0);
