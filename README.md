@@ -3,6 +3,13 @@ Joomla thumbnails
 
 Libary for Joomla to create thumbnails
 
+Install
+================
+1. Download zip
+2. Create the folder "thumbnail" in "/libraries/" ("/libraries/thumbnail")
+3. Upload "thumbnail.php" and "thumbnail.xml" to this folder. 
+4. You are ready to go!
+
 Usage
 ================
 ```PHP
